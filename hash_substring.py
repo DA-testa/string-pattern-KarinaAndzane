@@ -34,7 +34,7 @@ def read_input():
 def hashing (part):
     hash = 0
     for i in range(0,n):
-        char = ord(part[i]) % 96
+        char = ord(part[i]) % 96212
         hash = (hash*10+char)
     return hash
     
