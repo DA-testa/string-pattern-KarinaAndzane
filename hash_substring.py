@@ -4,6 +4,22 @@ def read_input():
     # this function needs to aquire input both from keyboard and file
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
     
+    mode = input()
+    if 'I' in mode:
+        return (input().rstrip(), input().rstrip())
+#         first_line = input()   # pattern
+#         second = input()         # text
+        
+    elif 'F' in mode:
+        # file=input()
+         with open ("./tests/06", mode ='r') as fails:
+            return (fails.readline().rstrip(), fails.readline().rstrip())
+#                 first_line = fails.readline() # pattern
+#                 second = fails.readline()     # text
+
+    else:
+        print("error")          
+        
     
     # after input type choice
     # read two lines 
@@ -13,17 +29,34 @@ def read_input():
     # return both lines in one return
     
     # this is the sample return, notice the rstrip function
-    return (input().rstrip(), input().rstrip())
-
+    
+    # return (input().rstrip(), input().rstrip())
+def hashing (part):
+    hash = 0
+    for i in range(0,n):
+        char = ord(part[i]) % 256
+        hash = (hash*10+char)
+    return hash
+    
 def print_occurrences(output):
     # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
-
-    # and return an iterable variable
-    return [0]
+        result=[]
+        global n
+        n = len(pattern)
+        m = len(text)-n
+        hashed_pattern = hashing (pattern)
+        
+        for i in range(0,m+1) :
+            #substr = text [i:i+n]
+            if hashing (text [i:i+n]) == hashed_pattern:
+                result.append(i)
+                         
+       # and return an iterable variable
+        return result
 
 
 # this part launches the functions
