@@ -11,8 +11,8 @@ def read_input():
 #         second = input()         # text
         
     elif 'F' in mode:
-         #filename=input()
-         with open ("./tests/"+str(input()), mode ='r') as fails:
+        # file=input()
+         with open ("./tests/06", mode ='r') as fails:
             return (fails.readline().rstrip(), fails.readline().rstrip())
 #                 first_line = fails.readline() # pattern
 #                 second = fails.readline()     # text
