@@ -45,14 +45,14 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
         result=[]
-        global n,m
+        global n
         n = len(pattern)
         m = len(text)-n
         hashed_pattern = hashing (pattern)
         
         for i in range(0,m+1) :
-            substr = text [i:i+n]
-            if hashing (substr) == hashed_pattern:
+            #substr = text [i:i+n]
+            if hashing (text [i:i+n]) == hashed_pattern:
                 result.append(i)
                          
        # and return an iterable variable
