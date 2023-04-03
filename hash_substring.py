@@ -34,7 +34,7 @@ def read_input():
 def hashing (part):
     hash = 0
     for i in range(0,n):
-        char = ord(part[i] % 96)
+        char = ord(part[i]) % 96
         hash = (hash*10+char)
     return hash
     
@@ -45,18 +45,18 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
         result=[]
+        global n,m
         n = len(pattern)
         m = len(text)-n
         hashed_pattern = hashing (pattern)
         
-        for i in range(0,m) :
+        for i in range(0,m+1) :
             substr = text [i:i+n]
-            if hashing (substr)==hashed_pattern:
+            if hashing (substr) == hashed_pattern:
                 result.append(i)
-            
-            
-    # and return an iterable variable
-    return result
+                         
+       # and return an iterable variable
+        return result
 
 
 # this part launches the functions
