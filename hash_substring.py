@@ -47,7 +47,12 @@ def get_occurrences(pattern, text):
         result=[]
         n = len(pattern)
         m = len(text)-n
-        hashed_pattern = hashing (substring)
+        hashed_pattern = hashing (pattern)
+        
+        for i in range(0,m) :
+            substr = text [i:i+n]
+            if hashing (substr)==hashed_pattern:
+                result.append(i)
             
             
     # and return an iterable variable
