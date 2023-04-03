@@ -31,7 +31,13 @@ def read_input():
     # this is the sample return, notice the rstrip function
     
     # return (input().rstrip(), input().rstrip())
-
+def hashing (part):
+    hash = 0
+    for i in range(0,n):
+        char = ord(part[i] % 96)
+        hash = (hash*10+char)
+    return hash
+    
 def print_occurrences(output):
     # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
@@ -39,12 +45,9 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
         result=[]
-        
-        for i in range (0,len(text)):
-            text[i]=
-        
-        
-        for i in range (0,len(text)):
+        n = len(pattern)
+        m = len(text)-n
+        hashed_pattern = hashing (substring)
             
             
     # and return an iterable variable
